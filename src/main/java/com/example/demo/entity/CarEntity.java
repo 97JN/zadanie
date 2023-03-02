@@ -3,9 +3,11 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "car")
+
 public class CarEntity {
 
     @Id
@@ -18,9 +20,9 @@ public class CarEntity {
     @Column(name = "price", nullable = false, length = 45)
     private BigDecimal price;
 
-    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private CarDetailEntity carDetail;
+    private List<CarDetailEntity> carDetailEntities;
 
 
     public CarEntity() {

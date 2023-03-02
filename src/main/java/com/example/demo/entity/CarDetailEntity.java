@@ -16,7 +16,7 @@ public class CarDetailEntity {
     @Column(name="color" ,nullable = false, length = 45)
     private String color;
 
-    @OneToOne
+    @ManyToOne
     @MapsId
     @JoinColumn(name = "car_id")
     private CarEntity car;
