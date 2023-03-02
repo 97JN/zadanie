@@ -9,9 +9,9 @@ import java.util.Optional;
 
 @Service
 public class CarService {
-    private CarRepository carRepository;
+    private final CarRepository carRepository;
 
-    @Autowired
+
     public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }

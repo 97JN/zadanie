@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import com.example.demo.entity.CarEntity;
 import com.example.demo.service.CarService;
@@ -13,7 +13,7 @@ public class CarController {
 
     private CarService carService;
 
-    @Autowired
+
     public CarController(CarService carService) {
         this.carService = carService;
     }
@@ -24,13 +24,13 @@ public class CarController {
     }
 
     @GetMapping
-    public Optional<CarEntity>getById(@RequestParam Integer temp){
-        return carService.findById(temp);
+    public Optional<CarEntity>getById(@RequestParam Integer id){
+        return carService.findById(id);
     }
 
     @DeleteMapping
-    public void deleteBy(@RequestParam Integer temp){
-        carService.deletyById(temp);
+    public void deleteBy(@RequestParam Integer id){
+        carService.deletyById(id);
     }
 
     @PostMapping
